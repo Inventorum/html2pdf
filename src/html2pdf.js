@@ -229,7 +229,7 @@ var html2pdf = (function(html2canvas, jsPDF) {
     else if (type === 'string' || obj instanceof String)      return 'string';
     else if (type === 'number' || obj instanceof Number)      return 'number';
     else if (type === 'function' || obj instanceof Function)  return 'function';
-    else if (!!obj && obj.constructor === Array)              return 'array';
+    else if (Array.isArray(obj))                              return 'array';
     else if (obj && obj.nodeType === 1)                       return 'element';
     else if (type === 'object')                               return 'object';
     else                                                      return 'unknown';
